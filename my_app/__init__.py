@@ -80,11 +80,12 @@ def chatbot():
             # grab two numbers from dialogflow parameters
             num1 = int(req['result']['parameters']['num1'])
             num2 = int(req['result']['parameters']['num2'])
-            # use sum_num() function to find sum of two numbers
-            message = "The sum of {} and  {} is {}".format(num1, num2, divide_num(num1, num2))
-            return prepare_response(message)
-
-
+            if num2 == 0:
+                return prepare_response("You can't divide by 0")
+            else:
+                # use sum_num() function to find sum of two numbers
+                message = "The sum of {} and  {} is {}".format(num1, num2, divide_num(num1, num2))
+                return prepare_response(message)
 
     except:
         message = "Oops there was an error, try again"
