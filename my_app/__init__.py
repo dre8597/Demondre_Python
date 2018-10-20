@@ -57,7 +57,7 @@ def chatbot():
             num1 = int(req['result']['parameters']['num1'])
             num2 = int(req['result']['parameters']['num2'])
             # use sum_num() function to find sum of two numbers
-            message = "The sum of {} and  {} is the squareroot of deez nutz".format(num1, num2, sum_num(num1, num2))
+            message = "Why the fuck are you asking me. I don't know!".format(num1, num2, sum_num(num1, num2))
             return prepare_response(message)
 
         elif req['result']['action'] == 'subtract_numbers':
